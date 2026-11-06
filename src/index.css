@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Layout Inspector styles when toggled */
+.inspect-grid-active {
+  position: relative;
+}
+
+.inspect-grid-active::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(239, 68, 68, 0.04) 0,
+    rgba(239, 68, 68, 0.04) calc((100% - 11 * 1.5rem) / 12),
+    transparent calc((100% - 11 * 1.5rem) / 12),
+    transparent calc((100% - 11 * 1.5rem) / 12 + 1.5rem)
+  );
+}
+
+.inspect-outlines-active * {
+  outline: 1px dashed rgba(59, 130, 246, 0.28) !important;
+}
+
+.inspect-outlines-active section {
+  outline: 2px solid rgba(16, 185, 129, 0.4) !important;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Notion Workspace Clone & Layout Inspector",
+  "description": "A high-fidelity Notion landing page clone featuring an interactive block document editor, product showcase tabs, template gallery, and responsive layout inspector.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
